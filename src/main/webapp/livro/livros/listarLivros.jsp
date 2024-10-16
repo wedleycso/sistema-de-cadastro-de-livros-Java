@@ -38,14 +38,9 @@
 				<td>${livro.anoPublicacao}</td>
 				<td>${livro.isbn}</td>
 				<td>${livro.descricao}</td>
-				<td><a href="livro/editar?id=${livro.id}">
-						<button type="button">Editar</button>
-				</a>
-					<form action="${pageContext.request.contextPath}/livro/excluir"
-						method="post" style="display: inline;">
-						<input type="hidden" name="id" value="${livro.id}">
-						<button type="submit" class="delete">Excluir</button>
-					</form></td>
+				<td>
+					<a href="livro/editar?id=${livro.id}"><button type="button">Editar</button></a>
+					<a href="${pageContext.request.contextPath}/livro/excluir?id=${livro.id}" onclick="return confirm('Tem certeza que deseja excluir este livro?')"><button type="button">Excluir</button></a>
 			</tr>
 		</c:forEach>
 	</table>

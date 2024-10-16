@@ -12,7 +12,7 @@ public class ExcluirLivroServlet extends HttpServlet {
     private LivroServlet livroServlet = new LivroServlet();
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	response.setContentType("text/html; charset=UTF-8");
     	request.setCharacterEncoding("UTF-8");
 
