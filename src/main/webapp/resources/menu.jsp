@@ -11,5 +11,3 @@
         <li><a href="${pageContext.request.contextPath}/livro/relatorios">Relatórios</a></li>
     </ul>
 </nav> 
-
-<hr>

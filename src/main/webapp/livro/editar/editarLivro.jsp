@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <% 
     String mensagemSucesso = (String) session.getAttribute("mensagemSucesso");
     if (mensagemSucesso != null) { 
@@ -23,7 +22,15 @@
 
 </head>
 <body>
-	<jsp:include page="/resources/menu.jsp" />
+	<nav>
+    <h1>Sistema de Cadastro de Livros</h1>
+    <ul>
+    	<li><a href="${pageContext.request.contextPath}/index.jsp">Início</a></li>
+        <li><a href="${pageContext.request.contextPath}/livro/cadastrar">Cadastrar Livro</a></li>
+        <li><a href="${pageContext.request.contextPath}/livro">Listar Todos os Livros</a></li>
+        <li><a href="${pageContext.request.contextPath}/livro/relatorios">Relatórios</a></li>
+    </ul>
+</nav> 
 	
 	<header>
     	<h1>Editar Livro</h1>
@@ -51,6 +58,9 @@
     }, 5000);
 </script>
 
-    <jsp:include page="/resources/footer.jsp" />
+    <footer>
+	<p>&copy; 2024 Sistema de Cadastro de Livros. Todos os direitos
+		reservados.</p>  
+</footer>
 </body>
 </html>
