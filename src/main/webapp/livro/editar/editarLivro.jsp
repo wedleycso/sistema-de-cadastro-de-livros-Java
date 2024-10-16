@@ -1,6 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<% 
+    String mensagemSucesso = (String) session.getAttribute("mensagemSucesso");
+    if (mensagemSucesso != null) { 
+%>
+    <div id="mensagem-sucesso" class="alert alert-success">
+        <%= mensagemSucesso %>
+    </div>
+<%
+    session.removeAttribute("mensagemSucesso");
+    }
+%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -29,7 +40,16 @@
     Descrição: <textarea name="descricao">${livro.descricao}</textarea><br>
     <input type="submit" value="Salvar">
 	</form>
-
+	
+	<script>
+    // Oculta a notificação após 5 segundos (5000 milissegundos)
+    setTimeout(function() {
+        var mensagemSucesso = document.getElementById("mensagem-sucesso");
+        if (mensagemSucesso) {
+            mensagemSucesso.style.display = "none";
+        }
+    }, 5000);
+</script>
 
     <jsp:include page="/resources/footer.jsp" />
 </body>

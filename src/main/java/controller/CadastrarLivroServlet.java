@@ -36,6 +36,7 @@ public class CadastrarLivroServlet extends HttpServlet {
         
         Livro livro = new Livro(null, titulo, autor, editora, genero, anoPublicacao, isbn, descricao);
         
+        request.getSession().setAttribute("mensagemSucesso", "Livro cadastrado com sucesso!");        
         
         LivroServlet.adicionarLivro(livro);
         

@@ -64,6 +64,7 @@ public class EditarLivroServlet extends HttpServlet {
             Livro livro = new Livro(id, titulo, autor, editora, genero, anoPublicacao, isbn, descricao); 
             LivroServlet.atualizarLivro(livro);
             
+            request.getSession().setAttribute("mensagemSucesso", "Informações atualizadas com sucesso!");  
             
             response.sendRedirect(request.getContextPath() + "/livro");
         } catch (NumberFormatException e) {

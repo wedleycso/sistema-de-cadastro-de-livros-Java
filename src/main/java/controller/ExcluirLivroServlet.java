@@ -19,7 +19,8 @@ public class ExcluirLivroServlet extends HttpServlet {
     	int id = Integer.parseInt(request.getParameter("id"));
         livroServlet.excluirLivro(id);
 
-       
+        request.getSession().setAttribute("mensagemDeletar", "O livro foi excluido!");  
+        
         response.sendRedirect(request.getContextPath() + "/livro");
     }
 }

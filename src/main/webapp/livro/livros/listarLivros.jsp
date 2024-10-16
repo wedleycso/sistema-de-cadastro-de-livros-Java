@@ -1,6 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<% 
+    String mensagemSucesso = (String) session.getAttribute("mensagemSucesso");
+    if (mensagemSucesso != null) { 
+%>
+    <div id="mensagem-sucesso" class="alert alert-success">
+        <%= mensagemSucesso %>
+    </div>
+<%
+    session.removeAttribute("mensagemSucesso");
+    }
+%>
+
+<% 
+    String mensagemDeletar = (String) session.getAttribute("mensagemDeletar");
+    if (mensagemDeletar != null) { 
+%>
+    <div id="mensagem-deletar" class="alert alert-success">
+        <%= mensagemDeletar %>
+    </div>
+<%
+    session.removeAttribute("mensagemDeletar");
+    }
+%>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -49,4 +73,17 @@
 
 	<jsp:include page="/resources/footer.jsp" />
 </body>
+<script>
+    // Oculta a notificação após 5 segundos (5000 milissegundos)
+    setTimeout(function() {
+        var mensagemSucesso = document.getElementById("mensagem-sucesso");
+        var mensagemDeletar = document.getElememtById("mensagem-deletar");
+        if (mensagemSucesso) {
+            mensagemSucesso.style.display = "none";
+        }
+        if (mensagemDeletar){
+        	mensagemDeletar.style.display = "none";
+        }
+    }, 5000);
+</script>
 </html>

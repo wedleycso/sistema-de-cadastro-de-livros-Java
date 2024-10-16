@@ -141,3 +141,68 @@ footer {
     color: white;
     text-align: center;
 }
+
+/* Estilo da notificação */
+#mensagem-sucesso {
+    position: fixed;
+    margin-top: 5px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50; /* Cor de fundo verde para sucesso */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    z-index: 1000;
+    opacity: 0; /* Oculto inicialmente */
+    visibility: hidden;
+    animation: fadeInDown 0.5s forwards, fadeOutUp 0.5s 4.5s forwards; /* Animação */
+}
+
+#mensagem-deletar {
+    position: fixed;
+    margin-top: 5px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: red; /* Cor de fundo verde para sucesso */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    z-index: 1000;
+    opacity: 0; /* Oculto inicialmente */
+    visibility: hidden;
+    animation: fadeInDown 0.5s forwards, fadeOutUp 0.5s 4.5s forwards; /* Animação */
+}
+
+/* Animação de entrada (deslizar para baixo e aparecer) */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50px); /* Começa fora da tela */
+        visibility: visible;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0); /* Termina na posição correta */
+        visibility: visible;
+    }
+}
+
+/* Animação de saída (deslizar para cima e desaparecer) */
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50px); /* Sai da tela */
+        visibility: hidden;
+    }
+}
+
