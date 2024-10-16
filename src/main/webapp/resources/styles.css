@@ -94,9 +94,9 @@ input[type="submit"]:hover {
 }
 
 table {
-    width: 100%;
+    width: 96%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 20px 2%;
 }
 
 table, th, td {
@@ -120,6 +120,14 @@ tr:nth-child(even) {
 
 tr:hover {
     background-color: #ddd;
+}
+
+td button{
+	background-color: #2196F3;
+	padding: 5px 10px;
+	border-style: none;
+	border-radius: 10px;
+	color: white;
 }
 
 
