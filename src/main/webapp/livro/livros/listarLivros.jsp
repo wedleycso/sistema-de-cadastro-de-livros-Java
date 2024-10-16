@@ -40,7 +40,7 @@
 				<td>${livro.anoPublicacao}</td>
 				<td>${livro.isbn}</td>
 				<td>${livro.descricao}</td>
-				<td>
+					<td>
 					<a href="livro/editar?id=${livro.id}"><button type="button">Editar</button></a>
 					<a href="${pageContext.request.contextPath}/livro/excluir?id=${livro.id}" onclick="return confirm('Tem certeza que deseja excluir este livro?')"><button type="button">Excluir</button></a>
 			</tr>
