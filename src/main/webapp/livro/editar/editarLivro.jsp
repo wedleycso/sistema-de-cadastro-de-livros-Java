@@ -23,6 +23,7 @@
     Título: <input type="text" name="titulo" value="${livro.titulo}" required><br>
     Autor: <input type="text" name="autor" value="${livro.autor}" required><br>
     Editora: <input type="text" name="editora" value="${livro.editora}" required><br>
+    Genero: <input type="text" name="genero" value="${livro.genero}" required><br>
     Ano de Publicação: <input type="number" name="anoPublicacao" value="${livro.anoPublicacao}" required><br>
     ISBN: <input type="text" name="isbn" value="${livro.isbn}"><br>
     Descrição: <textarea name="descricao">${livro.descricao}</textarea><br>

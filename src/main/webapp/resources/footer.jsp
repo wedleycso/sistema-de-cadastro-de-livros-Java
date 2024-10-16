@@ -6,5 +6,5 @@
 
 <footer>
 	<p>&copy; 2024 Sistema de Cadastro de Livros. Todos os direitos
-		reservados.</p>
+		reservados.</p>  
 </footer>

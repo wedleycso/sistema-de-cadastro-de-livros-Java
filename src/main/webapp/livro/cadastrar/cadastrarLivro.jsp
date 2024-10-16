@@ -35,6 +35,7 @@
     Título: <input type="text" name="titulo" required><br>
     Autor: <input type="text" name="autor" required><br>
     Editora: <input type="text" name="editora" required><br>
+    Genero: <input type="text" name="genero" required><br>
     Ano de Publicação: <input type="number" name="anoPublicacao" required><br>
     ISBN: <input type="text" name="isbn"><br>
     Descrição: <textarea name="descricao"></textarea><br>

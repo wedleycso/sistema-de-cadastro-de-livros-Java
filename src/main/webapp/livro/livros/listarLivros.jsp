@@ -25,6 +25,7 @@
 			<th>Título</th>
 			<th>Autor</th>
 			<th>Editora</th>
+			<th>Genero</th>
 			<th>Ano de Publicação</th>
 			<th>ISBN</th>
 			<th>Descrição</th>
@@ -35,6 +36,7 @@
 				<td>${livro.titulo}</td>
 				<td>${livro.autor}</td>
 				<td>${livro.editora}</td>
+				<td>${livro.genero}</td>
 				<td>${livro.anoPublicacao}</td>
 				<td>${livro.isbn}</td>
 				<td>${livro.descricao}</td>

@@ -9,6 +9,6 @@
         <li><a href="${pageContext.request.contextPath}/livro">Listar Todos os Livros</a></li>
         <li><a href="${pageContext.request.contextPath}/livro/relatorios">Relatórios</a></li>
     </ul>
-</nav>
+</nav> 
 
 <hr>
