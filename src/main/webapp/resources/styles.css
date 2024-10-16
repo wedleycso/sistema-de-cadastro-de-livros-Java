@@ -118,8 +118,9 @@ tr:hover {
     background-color: #ddd;
 }
 
+
 footer {
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
     padding: 20px;
