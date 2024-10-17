@@ -185,6 +185,24 @@ footer {
     animation: fadeInDown 0.5s forwards, fadeOutUp 0.5s 4.5s forwards; /* Animação */
 }
 
+#mensagem-erro {
+    position: fixed;
+    margin-top: 5px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: red; /* Cor de fundo verde para sucesso */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    z-index: 1000;
+    opacity: 0; /* Oculto inicialmente */
+    visibility: hidden;
+    animation: fadeInDown 0.5s forwards, fadeOutUp 0.5s 4.5s forwards; /* Animação */
+}
+
 /* Animação de entrada (deslizar para baixo e aparecer) */
 @keyframes fadeInDown {
     from {

@@ -1,7 +1,7 @@
 package controller;
 
 import model.Livro;
-
+import java.util.Calendar; 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,6 +32,15 @@ public class CadastrarLivroServlet extends HttpServlet {
         Integer anoPublicacao = Integer.parseInt(request.getParameter("anoPublicacao"));
         String isbn = request.getParameter("isbn");
         String descricao = request.getParameter("descricao");
+        
+        Calendar calendar = Calendar.getInstance();
+        int anoAtual = calendar.get(Calendar.YEAR);
+        
+            if (anoPublicacao < 1900 || anoPublicacao > anoAtual) {
+                request.getSession().setAttribute("mensagemErro", "Ano de publicação inválido! O ano deve estar entre 1900 e " + anoAtual + ".");
+                response.sendRedirect(request.getContextPath() + "/livro/cadastrar");
+                return; // Para o fluxo aqui caso o ano seja inválido
+            }
 
         
         Livro livro = new Livro(null, titulo, autor, editora, genero, anoPublicacao, isbn, descricao);
@@ -42,5 +51,5 @@ public class CadastrarLivroServlet extends HttpServlet {
         
         
         response.sendRedirect(request.getContextPath() + "/livro");
-    }
+}
 }

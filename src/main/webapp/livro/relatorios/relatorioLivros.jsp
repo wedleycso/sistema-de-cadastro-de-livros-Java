@@ -1,6 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<% 
+    String mensagemDeletar = (String) session.getAttribute("mensagemDeletar");
+    if (mensagemDeletar != null) { 
+%>
+    <div id="mensagem-deletar" class="alert alert-success">
+        <%= mensagemDeletar %>
+    </div>
+<%
+    session.removeAttribute("mensagemDeletar");
+    }
+%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
