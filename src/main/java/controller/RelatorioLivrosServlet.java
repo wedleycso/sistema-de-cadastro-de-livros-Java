@@ -20,14 +20,21 @@ public class RelatorioLivrosServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         // Captura os parâmetros do formulário
+        String name = request.getParameter("name");
         String autor = request.getParameter("autor");
         String editora = request.getParameter("editora");
         String anoPublicacaoStr = request.getParameter("anoPublicacao");
+        String genero = request.getParameter("genero");
 
         // Obtém a lista de livros
         List<Livro> livros = LivroServlet.getLivros(); // Método para obter a lista de livros
 
         // Filtra a lista de livros de acordo com os critérios informados
+        if (name != null && !name.trim().isEmpty()) {
+            livros = livros.stream()
+                    .filter(livro -> livro.getTitulo().toLowerCase().contains(name.toLowerCase()))
+                    .collect(Collectors.toList());
+        }
         if (autor != null && !autor.trim().isEmpty()) {
             livros = livros.stream()
                     .filter(livro -> livro.getAutor().toLowerCase().contains(autor.toLowerCase()))
@@ -36,6 +43,11 @@ public class RelatorioLivrosServlet extends HttpServlet {
         if (editora != null && !editora.trim().isEmpty()) {
             livros = livros.stream()
                     .filter(livro -> livro.getEditora().toLowerCase().contains(editora.toLowerCase()))
+                    .collect(Collectors.toList());
+        }
+        if (genero != null && !genero.trim().isEmpty()) {
+            livros = livros.stream()
+                    .filter(livro -> livro.getGenero().toLowerCase().contains(genero.toLowerCase()))
                     .collect(Collectors.toList());
         }
         if (anoPublicacaoStr != null && !anoPublicacaoStr.trim().isEmpty()) {
